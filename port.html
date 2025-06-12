@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>My Portfolio</title>
+</head>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1f3851;
+}
+
+header {
+    background-color: #1f3851;
+    color: white;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.header-container h1 {
+    color: #7ab8ea;
+    text-shadow: 0 0 8px #7ab8ea, 0 0 16px #06090c;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 8px #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+section {
+    padding: 250px;
+}
+
+img {
+    border: #56aee8 solid 5px;
+    float: right;
+    margin-left: 20px;
+    border-radius: 50%;
+    margin-top: -200px;
+    transition: all 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px #7ab8ea;
+    transition: all 0.4s ease;
+}
+
+section h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #7ab8ea;
+    text-shadow: 0 0 10px #4244b2, 0 0 20px #06090c;
+    font-size: 50px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+section h1:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px #4244b2, 0 0 30px #06090c;
+}
+
+section h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffcc00;
+    text-shadow: 0 0 8px #ffcc00;
+    font-size: 30px;
+    margin-top: -150px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+section h2:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 12px #ffcc00;
+}
+
+
+section p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.home-sci {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.home-sci a {
+  width: 50px;
+  height: 50px;
+  background-color: #e0f0ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #1f3851;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Instagram */
+.home-sci a.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+}
+
+/* GitHub */
+.home-sci a.github:hover {
+  background-color: #000;
+  color: white;
+}
+
+/* LinkedIn */
+.home-sci a.linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+
+
+
+#typewriter {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.cursor {
+    display: inline-block;
+    width: 1px;
+    background-color: white;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+footer:hover {
+    background-color: #1f3851;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+#projects {
+  padding: 180px 20px;
+  background-color: #1f3851;
+  text-align: center;
+  border-top: #00aeff solid 5px;
+}
+
+#projects h2 {
+  font-size: 36px;
+  color: #ffcc00;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(122, 184, 234, 0.4);
+}
+
+#projects h2:hover {
+  color: #7ab8ea;
+  text-shadow: 0 0 15px rgb(241, 245, 1);
+}
+
+.portfolio-item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.space-academy::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay */
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.space-academy * {
+    position: relative;
+    z-index: 2;
+}
+
+.space-academy {
+    background: url('https://t3.ftcdn.net/jpg/02/74/76/34/360_F_274763459_HADMcYrskkrAPtBDWqv4RHXz9QXjPoLX.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #fffdf5; /* fallback color if image fails */
+    color: #fff; /* ensures text is readable over the image */
+    border-left: 5pxsolid #7ab8ea;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.space-academy:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item h3 {
+    font-size: 25px;
+    color: #fff;
+    margin-top: 1px;
+}
+
+.portfolio-item p {
+    font-size: 18px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.key-features {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.key-features li {
+    font-size: 16px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.view-project-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #7ab8ea, #1f3851);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.view-project-button:hover {
+    background: linear-gradient(135deg, #ffcc00, #1f3851);
+    color: #1f3851;
+    transform: scale(1.05);
+    text-shadow: 0 0 6px #ffcc00;
+}
+
+.portfolio h3{
+    color: #ffcc00;
+    font-size: 30px;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #4244b2, 0 0 20px #06090c;
+}
+
+.portfolio h3:hover {
+    color: #7ab8ea;
+    text-shadow: 0 0 15px rgb(241, 245, 1);
+}
+
+
+#contact {
+    background-color: #1f3851;
+    padding: 190px 60px;
+    text-align: center;
+    color: white;
+    border-top: 4px solid #7ab8ea;
+    border-radius: 0 0 12px 12px;
+}
+
+#contact h2 {
+    font-size: 32px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #ffcc00;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+#contact a {
+    color: #7ab8ea;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.info-box {
+    background: #2b4b6c;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-box:hover {
+    transform: scale(1.05);
+    background: #365f89;
+}
+
+.info-box i {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.info-box span {
+    font-size: 16px;
+    color: #fff;
+}
+.info-box:hover i {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+</style>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <img src ="Vaishnavi.jpg" alt="Profile Picture" style="width: 350px; height: 350px; border-radius: 100%; margin-right: 20px;">
+        <h2>Hi I'm</h2>
+        <h1>Vaishnavi Teli</h1>
+        <p>Welcome to my portfolio! I am <span id="typewriter"></span><span class="cursor">|</span></p>
+        <p>Frontend enthusiast with a love for clean code and modern UI.</p>
+
+        <div class="home-sci">
+            <a href="https://www.instagram.com/uffff_ye_codes/" class="instagram" target = "_blank"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="https://github.com/VaishnaviTeli" class="github" target = "_blank"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/vaishnavi-teli-bb77582a7/" class = "linkedin" target = "_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="portfolio-item space-academy">
+            <h3>🚀 Space Academy: Elevate Your Learning</h3>
+            <p>Space Academy is a comprehensive, real-time web application designed to digitize and modernize the operations of a private tuition class. The platform features two primary user roles—Admin and Student—each with tailored functionalities to streamline academic management and enhance the learning experience.</p>
+            <h4>KEY FEATURES:</h4>
+            <ul class = "key-features">
+                <li>✅ Fully responsive and user-friendly design</li>
+                <li>⚡ Real-time updates without page reloads</li>
+                <li>📚 A complete solution to replace manual processes in tuition management</li>
+            </ul>
+            <a href="#" class = "view-project-button">View Project</a>
+        </div>
+
+        <div  class="portfolio">
+            <h3>More Projects Coming soon</h3>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you would like to get in touch, please feel free to reach out via </p>
+        <div class="contact-info">
+            <div class="info-box">
+                <i class="bx bx-phone"></i>
+                <span>+91 7718040520</span>
+            </div>
+            <div class="info-box">
+                <i class="bx bx-envelope"></i>
+                <span>vaishnavi.teli2004@gmail.com</span>
+            </div>
+            <div class="info-box">
+                <i class="bx bx-map"></i>
+                <span>Mumbai, India</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const roles = ["Web Developer", "Frontend Designer", "UI/UX Designer", "Java Programmer"];
+        let part = "";
+        let i = 0;
+        let offset = 0;
+        let forwards = true;
+        let skip_count = 0;
+        let skip_delay = 5;
+        let speed = 100;
+        const typewriter = document.getElementById("typewriter");
+        function type() {
+            setInterval(function () {
+                if (forwards) {
+                    if (offset >= roles[i].length) {
+                        ++skip_count;
+                        if (skip_count === skip_delay) {
+                            forwards = false;
+                            skip_count = 0;
+                        }
+                    }
+                } else {
+                    if (offset === 0) {
+                        forwards = true;
+                        i = (i + 1) % roles.length;
+                    }
+                }
+                part = roles[i].substring(0, offset);
+                if (forwards) {
+                    offset++;
+                } else {
+                    offset--;
+                }
+                typewriter.textContent = part;
+            }, speed);
+        }
+        type();
+    </script>
+
+
+
+
